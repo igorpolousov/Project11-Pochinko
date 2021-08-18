@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C2626A8B26CD1F4000C89CB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2626A8A26CD1F4000C89CB8 /* AppDelegate.swift */; };
 		C2626A8D26CD1F4000C89CB8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C2626A8C26CD1F4000C89CB8 /* GameScene.sks */; };
-		C2626A8F26CD1F4000C89CB8 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = C2626A8E26CD1F4000C89CB8 /* Actions.sks */; };
 		C2626A9126CD1F4000C89CB8 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2626A9026CD1F4000C89CB8 /* GameScene.swift */; };
 		C2626A9326CD1F4000C89CB8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2626A9226CD1F4000C89CB8 /* GameViewController.swift */; };
 		C2626A9626CD1F4000C89CB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2626A9426CD1F4000C89CB8 /* Main.storyboard */; };
@@ -20,7 +19,6 @@
 		C2626A8726CD1F4000C89CB8 /* Project11 Pochinko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project11 Pochinko.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2626A8A26CD1F4000C89CB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2626A8C26CD1F4000C89CB8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		C2626A8E26CD1F4000C89CB8 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		C2626A9026CD1F4000C89CB8 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		C2626A9226CD1F4000C89CB8 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		C2626A9526CD1F4000C89CB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 			children = (
 				C2626A8A26CD1F4000C89CB8 /* AppDelegate.swift */,
 				C2626A8C26CD1F4000C89CB8 /* GameScene.sks */,
-				C2626A8E26CD1F4000C89CB8 /* Actions.sks */,
 				C2626A9026CD1F4000C89CB8 /* GameScene.swift */,
 				C2626A9226CD1F4000C89CB8 /* GameViewController.swift */,
 				C2626A9426CD1F4000C89CB8 /* Main.storyboard */,
@@ -130,7 +127,6 @@
 				C2626A9626CD1F4000C89CB8 /* Main.storyboard in Resources */,
 				C2626A8D26CD1F4000C89CB8 /* GameScene.sks in Resources */,
 				C2626A9826CD1F4000C89CB8 /* Assets.xcassets in Resources */,
-				C2626A8F26CD1F4000C89CB8 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +288,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "online.swampios.Project11-Pochinko";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -311,7 +307,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "online.swampios.Project11-Pochinko";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
