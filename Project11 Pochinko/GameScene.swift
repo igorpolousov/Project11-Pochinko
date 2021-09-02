@@ -10,9 +10,16 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    // Массив для хранения различных цветов шаров
+    
+    let ballColours = ["ballBlue", "ballCyan", "ballGreen", "ballGrey", "ballPurple", "ballRed", "ballYellow"]
+    
+    // Надпись новая игра на экране
     var newGameLabel: SKLabelNode!
+    // ХЗ
     var box: SKSpriteNode!
     
+    // Переменная начала новой игры с вычисляемым свойством количество очков
     var newGameStart: Bool = false {
         didSet {
             if newGameStart {
@@ -20,17 +27,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
-    
+    // Надпись количества очков
     var scoreLabel: SKLabelNode!
-    
+    // Перменнная с количеством очков и свойством наблюдателя
     var score = 0 {
         didSet {
             scoreLabel.text = "Scores: \(score)"
         }
     }
-    
+    // Надпись редактирования количства прямоугольников на экране
     var editLabel: SKLabelNode!
-    
+    // Переменная для задания текста надписи для добавления прямоугольников
     var editingMode:Bool = false {
         didSet {
             if editingMode {
@@ -40,7 +47,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
-
+   // Задаём расположение надписей на экране
     override func didMove(to view: SKView) {
         
         let backGround = SKSpriteNode(imageNamed: "background")
@@ -111,7 +118,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 addChild(box)
            
             } else {
-                let ball = SKSpriteNode(imageNamed: "ballRed")
+                let ball = SKSpriteNode(imageNamed: ballColours.randomElement()!)
                 ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2)
                 ball.physicsBody?.restitution = 0.4
                 ball.physicsBody?.contactTestBitMask = ball.physicsBody?.collisionBitMask ?? 0
