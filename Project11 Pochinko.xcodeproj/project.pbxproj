@@ -13,6 +13,7 @@
 		C2626A9326CD1F4000C89CB8 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2626A9226CD1F4000C89CB8 /* GameViewController.swift */; };
 		C2626A9626CD1F4000C89CB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2626A9426CD1F4000C89CB8 /* Main.storyboard */; };
 		C2626A9826CD1F4000C89CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2626A9726CD1F4000C89CB8 /* Assets.xcassets */; };
+		C2626AA026E0F60F00C89CB8 /* FireParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = C2626A9F26E0F60F00C89CB8 /* FireParticles.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C2626A9526CD1F4000C89CB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2626A9726CD1F4000C89CB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2626A9926CD1F4000C89CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2626A9F26E0F60F00C89CB8 /* FireParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireParticles.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				C2626A9226CD1F4000C89CB8 /* GameViewController.swift */,
 				C2626A9426CD1F4000C89CB8 /* Main.storyboard */,
 				C2626A9726CD1F4000C89CB8 /* Assets.xcassets */,
+				C2626A9F26E0F60F00C89CB8 /* FireParticles.sks */,
 				C2626A9926CD1F4000C89CB8 /* Info.plist */,
 			);
 			path = "Project11 Pochinko";
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2626A9626CD1F4000C89CB8 /* Main.storyboard in Resources */,
+				C2626AA026E0F60F00C89CB8 /* FireParticles.sks in Resources */,
 				C2626A8D26CD1F4000C89CB8 /* GameScene.sks in Resources */,
 				C2626A9826CD1F4000C89CB8 /* Assets.xcassets in Resources */,
 			);

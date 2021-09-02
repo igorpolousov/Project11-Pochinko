@@ -1,7 +1,7 @@
 //
 //  GameScene.swift
 //  Project11 Pochinko
-//  Day 45
+//  Day 46
 //  Created by Igor Polousov on 18.08.2021.
 //
 
@@ -9,6 +9,17 @@ import SpriteKit
 
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    
+    var newGameLabel: SKLabelNode!
+    var box: SKSpriteNode!
+    
+    var newGameStart: Bool = false {
+        didSet {
+            if newGameStart {
+               score = 0
+            }
+        }
+    }
     
     var scoreLabel: SKLabelNode!
     
@@ -37,6 +48,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         backGround.blendMode = .replace
         backGround.zPosition = -1
         addChild(backGround)
+        
+        newGameLabel = SKLabelNode(fontNamed: "Chalkduster")
+        newGameLabel.text = "New Game"
+        newGameLabel.horizontalAlignmentMode = .center
+        newGameLabel.position = CGPoint(x: 450, y: 700)
+        addChild(newGameLabel)
+        
         
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
         scoreLabel.text = "Score 0"
@@ -72,19 +90,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let location = touch.location(in: self)
         let object = nodes(at: location)
         
-        if object.contains(editLabel) {
+        if object.contains(newGameLabel) {
+            newGameStart.toggle()
+            destroyBox()
+            
+        } else if object.contains(editLabel) {
             // editingMode = !editingMode этот кусок кода работает как переключатель и может быть заменён на toggle
             editingMode.toggle()
+            
         } else {
             if editingMode {
-                // create box here
+               
                 let size = CGSize(width: Int.random(in: 16...128), height: 16)
-                let box = SKSpriteNode(color: UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1), size: size)
+                box = SKSpriteNode(color: UIColor(red: CGFloat.random(in: 0...1), green: CGFloat.random(in: 0...1), blue: CGFloat.random(in: 0...1), alpha: 1), size: size)
                 box.zRotation = CGFloat.random(in: 0...3)
                 box.position = location
+                box.name = "box"
                 box.physicsBody = SKPhysicsBody(rectangleOf: box.size)
                 box.physicsBody?.isDynamic = false
                 addChild(box)
+           
             } else {
                 let ball = SKSpriteNode(imageNamed: "ballRed")
                 ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2)
@@ -149,7 +174,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func destroy(ball: SKNode) {
+        if let fireParticles = SKEmitterNode(fileNamed: "FireParticles") {
+            fireParticles.position = ball.position
+            addChild(fireParticles)
+        }
         ball.removeFromParent()
+    }
+    
+    func destroyBox() {
+        let nodeArray = self.children
+        for child in nodeArray {
+            if child.name == "box" || child.name == "ball" {
+                child.removeFromParent()
+            }
+        }
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
