@@ -13,11 +13,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Массив для хранения различных цветов шаров
     
     let ballColours = ["ballBlue", "ballCyan", "ballGreen", "ballGrey", "ballPurple", "ballRed", "ballYellow"]
+   // Подсказка
+    var hintLabel: SKLabelNode!
     
     // Надпись новая игра на экране
     var newGameLabel: SKLabelNode!
     // ХЗ
     var box: SKSpriteNode!
+    
+    
     
     // Переменная начала новой игры с вычисляемым свойством количество очков
     var newGameStart: Bool = false {
@@ -32,7 +36,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Перменнная с количеством очков и свойством наблюдателя
     var score = 0 {
         didSet {
-            scoreLabel.text = "Scores: \(score)"
+            scoreLabel.text = "Score: \(score)"
         }
     }
     // Надпись редактирования количства прямоугольников на экране
@@ -62,12 +66,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         newGameLabel.position = CGPoint(x: 450, y: 700)
         addChild(newGameLabel)
         
-        
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
         scoreLabel.text = "Score 0"
         scoreLabel.horizontalAlignmentMode = .right
-        scoreLabel.position = CGPoint(x: 980, y: 700)
+        scoreLabel.position = CGPoint(x: 880, y: 700)
         addChild(scoreLabel)
+        
+        hintLabel = SKLabelNode(fontNamed: "Chalkduster")
+        hintLabel.numberOfLines = 0
+        hintLabel.text = """
+            If your score is equal -5,
+            all blocks will be removed
+            """
+        hintLabel.horizontalAlignmentMode = .center
+        hintLabel.position = CGPoint(x: 880, y: 650)
+        hintLabel.fontSize = 15
+        addChild(hintLabel)
         
         editLabel = SKLabelNode(fontNamed: "Chalkduster")
         editLabel.text = "Edit"
@@ -97,7 +111,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let location = touch.location(in: self)
         let object = nodes(at: location)
         
-        if object.contains(newGameLabel) {
+        if object.contains(newGameLabel) || score == -5 {
             newGameStart.toggle()
             destroyBox()
             
