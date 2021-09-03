@@ -1,7 +1,7 @@
 //
 //  GameScene.swift
 //  Project11 Pochinko
-//  Day 46
+//  Day 47
 //  Created by Igor Polousov on 18.08.2021.
 //
 
@@ -18,7 +18,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Надпись новая игра на экране
     var newGameLabel: SKLabelNode!
-    // ХЗ
+    // Переменная для создания прямоугольников - препятсвий
     var box: SKSpriteNode!
     
     
